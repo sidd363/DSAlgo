@@ -51,7 +51,7 @@ public class maxAreaIslands {
 
 //        int[][] grid =  {{1,1,0,0,0},
 //                {1,1,0,0,0},
-//                {0,1,1,1,1},
+//                {0,0,1,1,1},
 //                {0,0,0,1,1}};
         System.out.println(maxAreaOfIsland(grid));
     }
