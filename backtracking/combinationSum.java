@@ -21,14 +21,18 @@ public class combinationSum {
         if(remainSum==0){
             ans.add(new ArrayList<>(tmp));
             return;
-        }else if(remainSum <  0){
+        }else if(remainSum <  0 || index >= arr.length){
             return;
-        }else{
-            for(int i = index ; i<arr.length;i++){
-                tmp.add(arr[i]);
-                util(ans, tmp, i,remainSum - arr[i] , arr);
-                tmp.remove(tmp.size()-1);
+        } else {
+            //for(int i = index ; i<arr.length;i++){
+            if (arr[index] <= remainSum){
+                tmp.add(arr[index]);
+                util(ans, tmp, index, remainSum - arr[index], arr);
+                tmp.remove(tmp.size() - 1);
             }
+            util(ans, tmp, index+1, remainSum, arr);
+
+            //}
         }
     }
 

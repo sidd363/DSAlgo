@@ -1,6 +1,5 @@
 package stacks;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class largestRectAreaHistogram {
@@ -8,6 +7,7 @@ public class largestRectAreaHistogram {
         // your code here
         long area = 0;
 
+        //nsl
         //1. find prev smaller element index for every ele
         Stack<Integer> st = new Stack<>();
         st.push(0);
@@ -25,6 +25,7 @@ public class largestRectAreaHistogram {
         // filling next smaller index array with their indexes
         st.clear();
 
+        //nsr
         st.push(hist.length-1);
         int  [] nextSmallerIndex = new int[hist.length];
         nextSmallerIndex[hist.length-1] =  hist.length ;

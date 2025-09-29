@@ -60,7 +60,7 @@ public class minWindowSubstr {
 	              // The character at the position pointed by the
 	              // `Left` pointer is no longer a part of the window.
 	              windowCounts.put(c, windowCounts.get(c) - 1);
-	              if (dictT.containsKey(c) && windowCounts.get(c).intValue() < dictT.get(c).intValue()) {
+	              if (dictT.containsKey(c) && windowCounts.get(c) < dictT.get(c)) {
 	                  formed--;
 	              }
 

@@ -1,6 +1,7 @@
 package matrix;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class spiralTraversal {
     public static ArrayList<Integer> spirallyTraverse(int matrix[][], int r, int c)
@@ -43,13 +44,60 @@ public class spiralTraversal {
         }
         return al;
     }
+
+
+    public static List<Integer> spiralOrder(int[][] grid) {
+        int r = grid.length;
+        int c = grid[0].length;
+
+        int left = 0, right = c-1;
+        int top = 0, down = r-1;
+
+
+        List<Integer> ans = new ArrayList<>();
+
+        while(left<= right && top<=down){
+            for(int k = left;k<=right; k++){
+                ans.add(grid[top][k]);
+
+            }
+            top++;
+            for(int k = top;k<=down; k++){
+                ans.add(grid[k][right]);
+
+            }
+            right--;
+
+            if(left<=right  ){
+                for(int k = right;k>= left; k--){
+                    ans.add(grid[down][k]);
+
+                }
+                down--;
+            }
+
+
+            if(top<=down
+            ){
+                for(int k = down;k>= top; k--){
+                    ans.add(grid[k][left]);
+
+                }
+                left++;
+            }
+
+        }
+        return ans;
+    }
     public static void main(String[] args) {
 
-        int [][] matrix = {{6, 6, 2, 28, 2 },
-                {12, 26, 3 ,28, 7},
-                {22 ,25 ,3 ,4, 23}};
-       // int [][] mat = {{5, 11, 30},
+        int [][] matrix = {{1, 2, 3 },{4, 5, 6 }, {7, 8, 9 }};
+       // int [][] mat = {{5, 1},
          //       {5, 6, 7}};
-        System.out.println(spirallyTraverse(matrix, 3, 5));
+        //System.out.println(spirallyTraverse(matrix, 3, 5));
+        List<Integer> ans = spiralOrder(matrix);
+        for(int i : ans)
+        System.out.print(i +"\t");
+        System.out.println();
     }
 }

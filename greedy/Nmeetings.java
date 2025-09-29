@@ -3,7 +3,7 @@ package greedy;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Nmeetings {
+public class    Nmeetings {
     public static class pairs{
         int st;
         int et;
